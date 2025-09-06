@@ -1,0 +1,34 @@
+<html>
+    <haed>
+        <title>
+            activity 1
+        </title>
+    </haed>
+    <body>
+        <h2>
+            JavaScript
+        </h2>
+        <p id="result">
+
+        </p>
+        <script>
+            class student{
+                constructor(name,year) {
+                    this.name=name
+                    this.year=year
+                }
+                age(){
+                    var date=new Date()
+                    return date.getFullYear()-this.year 
+                    }
+                    }
+                    student=new student("Kelvin",2011)
+                    document.getElementById("result").innerHTML=student.year+" "+ student.age()
+
+                    
+                
+            
+
+        </script>
+    </body>
+</html>
