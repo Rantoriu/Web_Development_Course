@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+            activity 1
+        </title>
+    </head>
+    <body>
+        <h2>
+            convert a JavaScript object into a Json string
+    
+
+        </h2>
+        <p id="result">
+
+        </p>
+        <script>
+            var my_object={
+                name:"Kelvin",age:14
+            }
+            var my_Json=JSON.stringify(my_object)
+            console.log(my_Json)
+            var new_object=JSON.parse(my_Json)
+            console.log(new_object)
+            document.getElementById("result").innerHTML=new_object.name+" "+new_object.age
+        </script>
+
+    </body>
+</html>

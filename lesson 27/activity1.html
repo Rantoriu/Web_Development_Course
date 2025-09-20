@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            activity 1
+        </title>
+    </head>
+    <body>
+        <form name="myform" onsubmit="validateform()">
+            name:<input type="text" name="fname">
+            <input type="submit" value="submit">
+            <p id="message">
+
+            </p>
+            <script>
+                function validateform(){
+                    var x=document.forms["myform"] ["fname"].value
+                    if(x==""){
+                        alert("please fill this name field")
+                        return false
+                    }
+                }
+            </script>
+
+        </form>
+    </body>
+</html>

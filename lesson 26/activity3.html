@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            activity 3
+        </title>
+    </head>
+    <body>
+        <h2>
+            JavaScript promise
+        </h2>
+        <p id="result">
+
+        </p>
+        <script>
+            function mydisplay(some){
+                document.getElementById("result").innerHTML=some
+            }
+            function add(a,b){
+                var addition=a+b
+                mydisplay(addition)
+            }
+            var mypromise=new Promise(function(myResolve,MyReject) {
+                var x=0
+                if(x==0){
+                    myResolve("ok")
+                }
+                else {
+                    MyReject("error")
+                }
+            })
+            mypromise.then(function(value){
+                add(5,7)
+            },
+        function(error){
+            add(error)
+        })
+            
+                
+            
+        </script>
+    </body>
+</html>

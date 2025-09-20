@@ -1,0 +1,266 @@
+<html>
+
+<head>
+    <title>
+        activity 3
+    </title>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="container">
+
+            <h1>Calculator</h1>
+
+            <div class="row">
+
+                <input type="text" id="result" name="result" class="result" value="" placeholder="result">
+
+            </div>
+
+            <div class="row">
+
+                <input type="button" value="7" onclick="setscreenvalue('7')">
+
+                <input type="button" value="8" onclick="setscreenvalue('8')">
+
+                <input type="button" value="9" onclick="setscreenvalue('9')">
+
+                <input type="button" value="/" onclick="setscreenvalue('/')">
+
+            </div>
+
+            <div class="row">
+
+                <input type="button" value="4" onclick="setscreenvalue('4')">
+
+                <input type="button" value="5" onclick="setscreenvalue('5')">
+
+                <input type="button" value="6" onclick="setscreenvalue('6')">
+
+                <input type="button" value="*" onclick="setscreenvalue('*')">
+
+            </div>
+            <div class="row">
+
+                <input type="button" value="1" onclick="setscreenvalue('1')">
+
+                <input type="button" value="2" onclick="setscreenvalue('2')">
+
+                <input type="button" value="3" onclick="setscreenvalue('3')">
+
+                <input type="button" value="-" onclick="setscreenvalue('-')">
+
+            </div>
+
+            <div class="row">
+
+                <input type="button" value="0" onclick="setscreenvalue('0')">
+
+                <input type="button" value="." onclick="setscreenvalue('.')">
+
+                <input type="button" value="%" onclick="setscreenvalue('%')">
+
+                <input type="button" value="+" onclick="setscreenvalue('+')">
+
+            </div>
+
+            <div class="row">
+
+                <input type="button" value="⌫" onclick="backspace()" class="special">
+
+                <input type="button" value="C" onclick="clearscreen()" class="special">
+
+                <input type="button" value="=" onclick="calculateResult()" class="equals">
+
+            </div>
+
+        </div>
+
+    </div>
+    <style>
+        * {
+
+            box-sizing: border-box;
+
+            font-family: "Open Sans", sans-serif;
+
+        }
+
+        .wrapper {
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background-color: #222;
+
+        }
+
+        h1 {
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+            color: #fff;
+
+        }
+
+        .container {
+
+            width: 280px;
+
+            background: #333;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .result {
+
+            width: 100%;
+
+            padding: 15px;
+
+            font-size: 1.2em;
+
+            margin-bottom: 10px;
+
+            text-align: right;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #111;
+
+            color: #0f0;
+
+        }
+
+        .row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 6px;
+
+        }
+
+        input[type="button"] {
+
+            flex: 1;
+
+            margin: 3px;
+
+            padding: 18px;
+
+            font-size: 1.1em;
+
+            border: none;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            background-color: #555;
+
+            color: white;
+
+            transition: 0.2s;
+
+        }
+
+        input[type="button"]:hover {
+
+            background-color: #777;
+
+        }
+
+        .special {
+
+            background-color: #d9534f;
+
+        }
+
+        .special:hover {
+
+            background-color: #c9302c;
+
+        }
+
+        .equals {
+
+            flex: 2;
+
+            background-color: #5cb85c;
+
+        }
+
+        .equals:hover {
+
+            background-color: #449d44;
+
+        }
+    </style>
+    <script>
+        function clearscreen() {
+
+            document.getElementById("result").value = "";
+
+        }
+
+        function setscreenvalue(value) {
+
+            document.getElementById("result").value += value;
+
+        }
+
+        function calculateResult() {
+
+            const resultelement = document.getElementById("result");
+
+            const expression = resultelement.value.trim();
+
+            if (expression === "") {
+
+                resultelement.value = "Enter expression";
+
+                return;
+
+            }
+
+            try {
+
+                resultelement.value = eval(expression);
+
+            } catch (e) {
+
+                resultelement.value = "Error";
+
+            }
+
+        }
+
+        function backspace() {
+
+            const res = document.getElementById("result");
+
+            res.value = res.value.slice(0, -1);
+
+        }
+    </script>
+</body>
+
+</html>
